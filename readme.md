@@ -1,6 +1,6 @@
 1. Install the dependencies using requirements.txt 
 
-2. Download the dataset from https://kaggle.com/datasets/87fedc62ad4d2439858addb7a0d607d70e2de77914f631a128a574b362ea6e84
+2. Download the dataset from https://drive.google.com/drive/folders/10QZtaSINJeB1eYkHgmlbuXfXkoPKAGGH?usp=sharing
 
 3. Process the dataset by running data_preprocess_smaller_vid.py
 
