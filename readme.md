@@ -5,3 +5,6 @@
 5. For fine-tuning, download the original trained RIFE model -> https://drive.google.com/file/d/1h42aGYPNJn2q8j_GVkS_yDu__G_UZ2GX/view?usp=sharing
 6. Run training.ipynb for training the model
 7. Run demo_interface.ipynb for testing a video or image
+
+
+Note: Most of the code is taken from https://github.com/hzwer/ECCV2022-RIFE
