@@ -18,8 +18,8 @@ def smaller_using_opencv():
         cap = cv2.VideoCapture(vid_path)
 
         num_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-        W = 448 #int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-        H = 448 #int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        W = 224 #int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        H = 224 #int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         # fps = cap.get(cv2.cv.CV_CAP_PROP_FPS)
 
         path = os.path.join(processed_dataset_path, f"{i}.mp4")
@@ -57,7 +57,7 @@ def smaller_using_opencv():
 
 
 dataset_path = "datasets/MIX_DATA/"
-processed_dataset_path = "datasets/VI_dataset_mix_448_10s/"
+processed_dataset_path = "datasets/VI_dataset_mix_224_10s/"
 if not os.path.exists(processed_dataset_path):
     print('Making the directory', processed_dataset_path)
     os.makedirs(processed_dataset_path)
