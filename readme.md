@@ -7,4 +7,6 @@
 7. Run demo_interface.ipynb for testing a video or image
 
 
+The best model can be found here -> https://drive.google.com/file/d/1AL_hA3o47FV6be15ODzzVEkbcwNzMzML/view?usp=sharing
+
 Note: Most of the code is taken from https://github.com/hzwer/ECCV2022-RIFE
