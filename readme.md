@@ -1,4 +1,4 @@
-# IE643 Class Project: Generating intermediate frames of a handwritten video
+# IE643 Class Project: Generating missing frames of a handwritten video
 
 This repository provides tools for generating intermediate frames in videos of handwritten content. It includes dataset preparation scripts, fine-tuning steps, training processes and also a interface to try out.
 
