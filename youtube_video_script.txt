@@ -1,4 +1,0 @@
-Automatic downloading scripts:
-------------------------------
-pip install yt-dlp
-python -m yt_dlp -i https://www.youtube.com/playlist?list=PL7yFTnWQZNwAXhwViau6Km9RlTEqVXGAe

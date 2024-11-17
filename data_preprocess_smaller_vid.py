@@ -55,7 +55,7 @@ def smaller_using_opencv():
         out.release()
         cv2.destroyAllWindows()
 
-
+# NOTE: Change the path accordingly
 dataset_path = "datasets/MIX_DATA/"
 processed_dataset_path = "datasets/VI_dataset_mix_224_10s/"
 if not os.path.exists(processed_dataset_path):
