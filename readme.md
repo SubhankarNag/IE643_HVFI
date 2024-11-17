@@ -1,4 +1,4 @@
-# Generating intermediate frames of a handwritten video
+# IE643 Class Project: Generating intermediate frames of a handwritten video
 
 This repository provides tools for generating intermediate frames in videos of handwritten content. It includes dataset preparation scripts, fine-tuning steps, training processes and also a interface to try out.
 
@@ -75,6 +75,6 @@ The best trained model can be found in this [LINK](https://drive.google.com/file
 ---
 
 ## Notes
-Path Updates: Ensure all file/folder paths are correctly set before running the any scripts or notebook, you can find the path by searching "NOTE" in the files.
-Newer Codes and model: It will be updated shortly.
-Code Attribution: Most of the training code is taken from [LINK](https://github.com/hzwer/ECCV2022-RIFE).
+- Path Updates: Ensure all file/folder paths are correctly set before running the any scripts or notebook, you can find the path by searching "NOTE" in the files.
+- Newer Codes and model: It will be updated shortly.
+- Code Attribution: Most of the training code is taken from [LINK](https://github.com/hzwer/ECCV2022-RIFE).
