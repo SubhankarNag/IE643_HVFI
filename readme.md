@@ -1,6 +1,6 @@
 # IE643 Class Project: Generating missing frames of a handwritten video
 
-This repository provides tools for generating intermediate frames in videos of handwritten content. It includes dataset preparation scripts, fine-tuning steps, training processes and also a interface to try out.
+This repository provides tools for generating intermediate frames in videos of handwritten content. It includes dataset preparation scripts, fine-tuning steps, training processes, pretrained models, and also a interface to try out.
 
 ---
 
@@ -24,14 +24,36 @@ python data_preprocess_smaller_vid.py
 ```
 
 ### 3. Processed Dataset
-You can also download the already Processed Dataset from this [LINK](https://drive.google.com/drive/folders/10QZtaSINJeB1eYkHgmlbuXfXkoPKAGGH?usp=sharing).
+You can also download the already Processed Dataset from this [LINK](https://drive.google.com/drive/folders/10QZtaSINJeB1eYkHgmlbuXfXkoPKAGGH?usp=sharing) and store it in the `dataset` folder.
 
 
 ### 4. Training
-For training the model, run the **training.ipynb** notebook.
+For training the model, run the following script, the intermidate results and the best model will be store in the `new_train_log` folder - 
+```bash
+python train.py
+```
 
-### 5. Fine-Tuning
-For fine-tuning, download the original pretrained RIFE model from [LINK](https://drive.google.com/file/d/1h42aGYPNJn2q8j_GVkS_yDu__G_UZ2GX/view?usp=sharing). Place the model in the **new_train_log** folder for fine-tuning. Change the 2nd last cell of **training.ipynb** notebook, and run it.
+### 5. Testing
+Almost all the model files can be found in the `models` folder, and trained model can be found in `trained_models` folder. If you want to check the performance of these models on the dataset, you need to change the `MODEL_NAME` in `choose_model.py` file and change parameters in `utils.config.py` according to the chosen model. Then run the following script and it will output PSNR for all the splits -
+```bash
+python test.py
+```
+
+### 5. Hyperparameters (Only Important ones)
+File: **utils.config.py**
+- ```num_frames = 9```        ---> Use 9 frames when using context based models, else 7 frames
+- ```num_instances = 9```     ---> Max 42 or 33 instances/video incase of 7 or 9 frames respectively
+- ```is_context = True```     ---> True when using context based models, else False
+- ```is_finetuning = False``` ---> True if you want to finetune a model, else False  
+
+File: **choose_model.py**
+- ```MODEL_NAME = "..."```       ---> Choose any name of the available model
+
+### The best model
+The best configuration is already set, in which **41.32 PSNR** is achieved.
+```bash
+Training from scratch + Region Loss + More Context + Batch-Norm + Dropout + 33 instances + 9 frames
+```
 
 ---
 ---
@@ -43,12 +65,9 @@ This interactive interface is designed for generating intermediate frames in vid
 ### Features
 
 - **Upload Video**: Upload a video (with low fps or removed frames) to generate intermidate interpolated frames.
-- **Upload Images**: Upload two images, and it will generate any number of in between frames.
+- **Upload Images**: Upload 2/4 images, and it will generate any number of in between frames.
 - **Interactive Slider**: Set the number (its in power of 2) of interpolated frames using the slider.
 - **Output**: You can view output video or interpolated frames.
-
-
-### Setup Instructions
 
 #### Prerequisites
 
@@ -60,21 +79,15 @@ This interactive interface is designed for generating intermediate frames in vid
 
 #### Setup and Execute 
 
-- Download the model from this  [LINK](https://drive.google.com/file/d/1AL_hA3o47FV6be15ODzzVEkbcwNzMzML/view?usp=sharing) and make sure that the model is in the right path, i.e., under **new_train_log** folder.
-- Run the interactive python file `demo_interface.ipynb`
-- A link will be given after running all the cells, you can open that link and try it.
+- Change the `MODEL_NAME` in  `choose_model.py` file
+- Run the interactive python file `demo_interface.ipynb` or `demo_interface_context.ipynb` accordingly
+- After running all the cells, a link will be displayed, one can open that link and try it.
+- Some sample input images or video can be found in `demo_examples` folder.
 
-
----
----
-
-## Best Model
-The best trained model can be found in this [LINK](https://drive.google.com/file/d/1AL_hA3o47FV6be15ODzzVEkbcwNzMzML/view?usp=sharing).
 
 ---
 ---
 
 ## Notes
-- Path Updates: Ensure all file/folder paths are correctly set before running the any scripts or notebook, you can find the path by searching "NOTE" in the files.
-- Newer Codes and model: It will be updated shortly.
+- Path Updates: Ensure all file/folder paths are correctly set before running the any scripts or notebook.
 - Code Attribution: Most of the training code is taken from [LINK](https://github.com/hzwer/ECCV2022-RIFE).
